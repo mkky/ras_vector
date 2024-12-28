@@ -1,0 +1,118 @@
+timezone: Europe/Moscow
+
+api:
+  enabled: True
+
+transforms:
+  parse_rac_output:
+    inputs:
+      - exec_rac_*
+    type: remap
+    source: |-
+      if !exists(.message) || (.message == "") {
+        abort
+      }
+
+      events = []
+      metrics = []
+
+      for_each(split(string!(.message), "\n\n")) -> |index, block| {
+        if block != "" {
+          event = parse_key_value!(block, key_value_delimiter: ":", field_delimiter: "\n")
+          event.cmd_type = get!(value: .command, path: [1])
+          event.command_str = join!(.command, " ")
+          event.command = .command
+          event.vector_host = get_hostname!()
+
+          event.event_id = if exists(event.session) {
+            event.session
+          } else if exists(event.process) {
+            event.process
+          }
+
+          event = map_keys(event, recursive: true) -> |key| { replace(key, "-", "_") }
+
+          events = push(events, event)
+        }
+      }
+
+      . = events
+
+  filter_cmd:
+    type: exclusive_route
+    inputs:
+      - parse_rac_output
+    routes:
+      - name: "session_license"
+        condition:
+          type: vrl
+          source: |-
+            (includes(array!(.command), "session") && includes(array!(.command), "--license")) || 
+            includes(array!(.command), "/var/log/rac_sessions_licenses.log")
+      - name: "session"
+        condition:
+          type: vrl
+          source: |-
+            includes(array!(.command), "session") || 
+            includes(array!(.command), "/var/log/rac_sessions.log")
+      - name: "cluster"
+        condition:
+          type: vrl
+          source: |-
+            includes(array!(.command), "cluster") || 
+            includes(array!(.command), "/var/log/rac_process.log")
+
+sinks:
+  json_log_to_tmp_folder:
+    type: file
+    inputs:
+      - ff
+      - parse_rac_output
+    compression: none
+    path: /var/lib/vector/vector-out.json
+    encoding:
+      codec: json
+
+  prom:
+    type: prometheus_exporter
+    inputs:
+      - metrics_*
+
+sources:
+  ff: # Eternal source to prevent Vector from exiting
+    type: file
+    include:
+      - ./8888888.log
+
+  exec_rac_sessions_cat:
+    type: exec
+    framing:
+      method: bytes
+    command:
+      - cat
+      - "/var/log/rac_sessions.log"
+    mode: streaming
+    streaming:
+      respawn_on_exit: false
+
+  exec_rac_sessions_licenses_cat:
+    type: exec
+    framing:
+      method: bytes
+    command:
+      - cat
+      - "/var/log/rac_sessions_licenses.log"
+    mode: streaming
+    streaming:
+      respawn_on_exit: false
+
+  exec_rac_process_cat:
+    type: exec
+    framing:
+      method: bytes
+    command:
+      - cat
+      - "/var/log/rac_process.log"
+    mode: streaming
+    streaming:
+      respawn_on_exit: false

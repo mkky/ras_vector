@@ -1,0 +1,16 @@
+session            : fb2ee2a5-0ff5-421c-88e7-142a1fb189cc
+user-name          : БаеваЮВ
+host               : uk-log-pc-03
+app-id             : 1CV8C
+full-name          : "file:///var/1C/licenses/20241221154522.lic"
+series             : "8101672557"
+issued-by-server   : yes
+license-type       : soft
+net                : no
+max-users-all      : 100
+max-users-cur      : 100
+rmngr-address      : "tts-1c-lic"
+rmngr-port         : 1564
+rmngr-pid          : 140295
+short-presentation : "Сервер, 8101672557 100 100"
+full-presentation  : "Сервер, 140295, tts-1c-lic, 1564, 8101672557

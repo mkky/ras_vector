@@ -1,0 +1,5 @@
+usr1cv8   1394     1  0 дек21 ?     00:00:11 /opt/1cv8/x86_64/8.3.25.1445/ras cluster --monitor-port=1655 --port=1645 localhost:1640
+usr1cv8   1403     1  0 дек21 ?     00:00:11 /opt/1cv8/x86_64/8.3.25.1445/ras cluster --monitor-port=1855 --port=1845 localhost:1840
+usr1cv8   1427     1  0 дек21 ?     00:00:11 /opt/1cv8/x86_64/8.3.25.1445/ras cluster --monitor-port=1755 --port=1745 localhost:1740
+usr1cv8   1431     1  0 дек21 ?     00:00:11 /opt/1cv8/x86_64/8.3.25.1445/ras cluster --monitor-port=1955 --port=1945 localhost:1940
+usr1cv8  20313     1  0 10:27 ?     00:00:00 /opt/1cv8/x86_64/8.3.25.1445/ras cluster --port=1545 localhost:1540 --monitor-base=/metrics --monitor-address=10.15.22.101 --monitor-port=5555

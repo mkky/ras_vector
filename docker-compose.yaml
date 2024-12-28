@@ -1,0 +1,26 @@
+services:
+  vector:
+    image: timberio/vector:latest-debian
+    container_name: vector
+    restart: no
+    volumes:
+      - ./vector:/etc/vector/
+      - ./logs:/var/log/
+      - ./vector-out.json:/var/lib/vector/vector-out.json
+    ports:
+      - 8686:8686
+    command:
+      - --config
+      - /etc/vector/*.yaml
+
+  prometheus:
+    image: prom/prometheus
+    container_name: prom
+    volumes:
+      - ./prometheus.yaml:/etc/prometheus/prometheus.yml
+    ports:
+      - 9090:9090
+
+
+
+

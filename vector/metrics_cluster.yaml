@@ -1,0 +1,174 @@
+transforms:
+
+  metrics_cluster:
+    type: log_to_metric
+    inputs:
+      - filter_cmd.cluster
+    metrics:
+      - type: gauge
+        field: connections
+        tags:
+          event_id: "{{ event_id }}"
+          process: "{{ process }}"
+          host: "{{ host }}"
+          port: "{{ port }}"
+          pid: "{{ pid }}"
+          started_at: "{{ started_at }}"
+          use: "{{ use }}"
+          reserve: "{{ reserve }}"
+
+      - type: gauge
+        field: capacity
+        tags:
+          event_id: "{{ event_id }}"
+          process: "{{ process }}"
+          host: "{{ host }}"
+          port: "{{ port }}"
+          pid: "{{ pid }}"
+          started_at: "{{ started_at }}"
+          use: "{{ use }}"
+          reserve: "{{ reserve }}"
+
+      - type: gauge
+        field: memory_size
+        tags:
+          event_id: "{{ event_id }}"
+          process: "{{ process }}"
+          host: "{{ host }}"
+          port: "{{ port }}"
+          pid: "{{ pid }}"
+          started_at: "{{ started_at }}"
+          use: "{{ use }}"
+          reserve: "{{ reserve }}"
+
+      - type: gauge
+        field: memory_excess_time
+        tags:
+          event_id: "{{ event_id }}"
+          process: "{{ process }}"
+          host: "{{ host }}"
+          port: "{{ port }}"
+          pid: "{{ pid }}"
+          started_at: "{{ started_at }}"
+          use: "{{ use }}"
+          reserve: "{{ reserve }}"
+
+      - type: gauge
+        field: selection_size
+        tags:
+          event_id: "{{ event_id }}"
+          process: "{{ process }}"
+          host: "{{ host }}"
+          port: "{{ port }}"
+          pid: "{{ pid }}"
+          started_at: "{{ started_at }}"
+          use: "{{ use }}"
+          reserve: "{{ reserve }}"
+
+      - type: gauge
+        field: avg_call_time
+        tags:
+          event_id: "{{ event_id }}"
+          process: "{{ process }}"
+          host: "{{ host }}"
+          port: "{{ port }}"
+          pid: "{{ pid }}"
+          started_at: "{{ started_at }}"
+          use: "{{ use }}"
+          reserve: "{{ reserve }}"
+
+      - type: gauge
+        field: avg_db_call_time
+        tags:
+          event_id: "{{ event_id }}"
+          process: "{{ process }}"
+          host: "{{ host }}"
+          port: "{{ port }}"
+          pid: "{{ pid }}"
+          started_at: "{{ started_at }}"
+          use: "{{ use }}"
+          reserve: "{{ reserve }}"
+
+      - type: gauge
+        field: avg_lock_call_time
+        tags:
+          event_id: "{{ event_id }}"
+          process: "{{ process }}"
+          host: "{{ host }}"
+          port: "{{ port }}"
+          pid: "{{ pid }}"
+          started_at: "{{ started_at }}"
+          use: "{{ use }}"
+          reserve: "{{ reserve }}"
+
+      - type: gauge
+        field: avg_server_call_time
+        tags:
+          event_id: "{{ event_id }}"
+          process: "{{ process }}"
+          host: "{{ host }}"
+          port: "{{ port }}"
+          pid: "{{ pid }}"
+          started_at: "{{ started_at }}"
+          use: "{{ use }}"
+          reserve: "{{ reserve }}"
+
+      - type: gauge
+        field: avg_threads
+        tags:
+          event_id: "{{ event_id }}"
+          process: "{{ process }}"
+          host: "{{ host }}"
+          port: "{{ port }}"
+          pid: "{{ pid }}"
+          started_at: "{{ started_at }}"
+          use: "{{ use }}"
+          reserve: "{{ reserve }}"
+
+      - type: gauge
+        field: available_perfomance
+        tags:
+          event_id: "{{ event_id }}"
+          process: "{{ process }}"
+          host: "{{ host }}"
+          port: "{{ port }}"
+          pid: "{{ pid }}"
+          started_at: "{{ started_at }}"
+          use: "{{ use }}"
+          reserve: "{{ reserve }}"
+
+#      - type: gauge
+#        field: is_enable
+#        tags:
+#          event_id: "{{ event_id }}"
+#          process: "{{ process }}"
+#          host: "{{ host }}"
+#          port: "{{ port }}"
+#          pid: "{{ pid }}"
+#          started_at: "{{ started_at }}"
+#          use: "{{ use }}"
+#          reserve: "{{ reserve }}"
+#
+#      - type: gauge
+#        field: running
+#        tags:
+#          event_id: "{{ event_id }}"
+#          process: "{{ process }}"
+#          host: "{{ host }}"
+#          port: "{{ port }}"
+#          pid: "{{ pid }}"
+#          started_at: "{{ started_at }}"
+#          use: "{{ use }}"
+#          reserve: "{{ reserve }}"
+#
+#      - type: gauge
+#        field: reserve
+#        tags:
+#          event_id: "{{ event_id }}"
+#          process: "{{ process }}"
+#          host: "{{ host }}"
+#          port: "{{ port }}"
+#          pid: "{{ pid }}"
+#          started_at: "{{ started_at }}"
+#          use: "{{ use }}"
+#          reserve: "{{ reserve }}"

@@ -1,0 +1,5 @@
+usr1cv8  26221 26134 10 02:25 ?        01:11:35 /opt/1cv8/x86_64/8.3.25.1445/rmngr -port 1641 -host tts-srv1c-1 -range 1660:1691 -d /home/usr1cv8/.1cv8/1C/1cv8-1640/ -debug -tcp -clstid e5ea2369-c90a-436f-93e4-1c28f7c81d09
+usr1cv8  26222 26132  2 02:25 ?        00:17:47 /opt/1cv8/x86_64/8.3.25.1445/rmngr -port 1541 -host tts-srv1c-1 -range 1560:1591 -d /home/usr1cv8/.1cv8/1C/1cv8-1540/ -debug -tcp -clstid 2ac44a8f-92c7-432f-8f27-7aa861acc21c
+usr1cv8  26224 26136  3 02:25 ?        00:27:01 /opt/1cv8/x86_64/8.3.25.1445/rmngr -port 1741 -host tts-srv1c-1 -range 1760:1791 -d /home/usr1cv8/.1cv8/1C/1cv8-1740/ -debug -tcp -clstid 40f025b1-bd33-4baf-b514-0bf5f1b0249c
+usr1cv8  26225 26138  3 02:25 ?        00:26:08 /opt/1cv8/x86_64/8.3.25.1445/rmngr -port 1841 -host tts-srv1c-1 -range 1860:1891 -d /home/usr1cv8/.1cv8/1C/1cv8-1840/ -debug -tcp -clstid 365234e1-f38c-4c8a-a4b0-8adc73e92461
+usr1cv8  30044 30027  4 05:10 ?        00:23:55 /opt/1cv8/x86_64/8.3.25.1445/rmngr -port 1941 -host tts-srv1c-1 -range 1960:1991 -d /home/usr1cv8/.1cv8/1C/1cv8-1940/ -debug -tcp -clstid 4ed8d8b3-07a0-4176-8e38-abdad598001f

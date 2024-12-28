@@ -1,0 +1,327 @@
+transforms:
+  metrics_session:
+    type: log_to_metric
+    inputs:
+      - filter_cmd.session
+    metrics:
+      - type: gauge
+        field: session_id
+        tags:
+          event_id: "{{ event_id }}"
+          session_id: "{{ session_id }}"
+          connection: "{{ connection }}"
+          process: "{{ process }}"
+          infobase: "{{ infobase }}"
+          user_name: "{{ user_name }}"
+          host: "{{ host }}"
+          app_id: "{{ app_id }}"
+          locale: "{{ locale }}"
+          client_ip: "{{ client_ip }}"
+
+      - type: gauge
+        field: passive_session_hibernate_time
+        tags:
+          event_id: "{{ event_id }}"
+          session_id: "{{ session_id }}"
+          connection: "{{ connection }}"
+          process: "{{ process }}"
+          infobase: "{{ infobase }}"
+          user_name: "{{ user_name }}"
+          host: "{{ host }}"
+          app_id: "{{ app_id }}"
+          locale: "{{ locale }}"
+          client_ip: "{{ client_ip }}"
+
+      - type: gauge
+        field: hibernate_session_terminate_time
+        tags:
+          event_id: "{{ event_id }}"
+          session_id: "{{ session_id }}"
+          connection: "{{ connection }}"
+          process: "{{ process }}"
+          infobase: "{{ infobase }}"
+          user_name: "{{ user_name }}"
+          host: "{{ host }}"
+          app_id: "{{ app_id }}"
+          locale: "{{ locale }}"
+          client_ip: "{{ client_ip }}"
+
+      - type: gauge
+        field: blocked_by_dbms
+        tags:
+          event_id: "{{ event_id }}"
+          session_id: "{{ session_id }}"
+          connection: "{{ connection }}"
+          process: "{{ process }}"
+          infobase: "{{ infobase }}"
+          user_name: "{{ user_name }}"
+          host: "{{ host }}"
+          app_id: "{{ app_id }}"
+          locale: "{{ locale }}"
+          client_ip: "{{ client_ip }}"
+
+      - type: gauge
+        field: blocked_by_ls
+        tags:
+          event_id: "{{ event_id }}"
+          session_id: "{{ session_id }}"
+          connection: "{{ connection }}"
+          process: "{{ process }}"
+          infobase: "{{ infobase }}"
+          user_name: "{{ user_name }}"
+          host: "{{ host }}"
+          app_id: "{{ app_id }}"
+          locale: "{{ locale }}"
+          client_ip: "{{ client_ip }}"
+
+      - type: gauge
+        field: bytes_all
+        tags:
+          event_id: "{{ event_id }}"
+          session_id: "{{ session_id }}"
+          connection: "{{ connection }}"
+          process: "{{ process }}"
+          infobase: "{{ infobase }}"
+          user_name: "{{ user_name }}"
+          host: "{{ host }}"
+          app_id: "{{ app_id }}"
+          locale: "{{ locale }}"
+          client_ip: "{{ client_ip }}"
+
+      - type: gauge
+        field: bytes_last_5min
+        tags:
+          event_id: "{{ event_id }}"
+          session_id: "{{ session_id }}"
+          connection: "{{ connection }}"
+          process: "{{ process }}"
+          infobase: "{{ infobase }}"
+          user_name: "{{ user_name }}"
+          host: "{{ host }}"
+          app_id: "{{ app_id }}"
+          locale: "{{ locale }}"
+          client_ip: "{{ client_ip }}"
+
+      - type: gauge
+        field: calls_all
+        tags:
+          event_id: "{{ event_id }}"
+          session_id: "{{ session_id }}"
+          connection: "{{ connection }}"
+          process: "{{ process }}"
+          infobase: "{{ infobase }}"
+          user_name: "{{ user_name }}"
+          host: "{{ host }}"
+          app_id: "{{ app_id }}"
+          locale: "{{ locale }}"
+          client_ip: "{{ client_ip }}"
+
+      - type: gauge
+        field: calls_last_5min
+        tags:
+          event_id: "{{ event_id }}"
+          session_id: "{{ session_id }}"
+          connection: "{{ connection }}"
+          process: "{{ process }}"
+          infobase: "{{ infobase }}"
+          user_name: "{{ user_name }}"
+          host: "{{ host }}"
+          app_id: "{{ app_id }}"
+          locale: "{{ locale }}"
+          client_ip: "{{ client_ip }}"
+
+      - type: gauge
+        field: dbms_bytes_all
+        tags:
+          event_id: "{{ event_id }}"
+          session_id: "{{ session_id }}"
+          connection: "{{ connection }}"
+          process: "{{ process }}"
+          infobase: "{{ infobase }}"
+          user_name: "{{ user_name }}"
+          host: "{{ host }}"
+          app_id: "{{ app_id }}"
+          locale: "{{ locale }}"
+          client_ip: "{{ client_ip }}"
+
+      - type: gauge
+        field: dbms_bytes_last_5min
+        tags:
+          event_id: "{{ event_id }}"
+          session_id: "{{ session_id }}"
+          connection: "{{ connection }}"
+          process: "{{ process }}"
+          infobase: "{{ infobase }}"
+          user_name: "{{ user_name }}"
+          host: "{{ host }}"
+          app_id: "{{ app_id }}"
+          locale: "{{ locale }}"
+          client_ip: "{{ client_ip }}"
+
+      - type: gauge
+        field: db_proc_took
+        tags:
+          event_id: "{{ event_id }}"
+          session_id: "{{ session_id }}"
+          connection: "{{ connection }}"
+          process: "{{ process }}"
+          infobase: "{{ infobase }}"
+          user_name: "{{ user_name }}"
+          host: "{{ host }}"
+          app_id: "{{ app_id }}"
+          locale: "{{ locale }}"
+          client_ip: "{{ client_ip }}"
+
+      - type: gauge
+        field: duration_all
+        tags:
+          event_id: "{{ event_id }}"
+          session_id: "{{ session_id }}"
+          connection: "{{ connection }}"
+          process: "{{ process }}"
+          infobase: "{{ infobase }}"
+          user_name: "{{ user_name }}"
+          host: "{{ host }}"
+          app_id: "{{ app_id }}"
+          locale: "{{ locale }}"
+          client_ip: "{{ client_ip }}"
+
+      - type: gauge
+        field: duration_all_dbms
+        tags:
+          event_id: "{{ event_id }}"
+          session_id: "{{ session_id }}"
+          connection: "{{ connection }}"
+          process: "{{ process }}"
+          infobase: "{{ infobase }}"
+          user_name: "{{ user_name }}"
+          host: "{{ host }}"
+          app_id: "{{ app_id }}"
+          locale: "{{ locale }}"
+          client_ip: "{{ client_ip }}"
+
+      - type: gauge
+        field: duration_current
+        tags:
+          event_id: "{{ event_id }}"
+          session_id: "{{ session_id }}"
+          connection: "{{ connection }}"
+          process: "{{ process }}"
+          infobase: "{{ infobase }}"
+          user_name: "{{ user_name }}"
+          host: "{{ host }}"
+          app_id: "{{ app_id }}"
+          locale: "{{ locale }}"
+          client_ip: "{{ client_ip }}"
+
+      - type: gauge
+        field: duration_current_dbms
+        tags:
+          event_id: "{{ event_id }}"
+          session_id: "{{ session_id }}"
+          connection: "{{ connection }}"
+          process: "{{ process }}"
+          infobase: "{{ infobase }}"
+          user_name: "{{ user_name }}"
+          host: "{{ host }}"
+          app_id: "{{ app_id }}"
+          locale: "{{ locale }}"
+          client_ip: "{{ client_ip }}"
+
+      - type: gauge
+        field: duration_last_5min
+        tags:
+          event_id: "{{ event_id }}"
+          session_id: "{{ session_id }}"
+          connection: "{{ connection }}"
+          process: "{{ process }}"
+          infobase: "{{ infobase }}"
+          user_name: "{{ user_name }}"
+          host: "{{ host }}"
+          app_id: "{{ app_id }}"
+          locale: "{{ locale }}"
+          client_ip: "{{ client_ip }}"
+
+      - type: gauge
+        field: duration_last_5min_dbms
+        tags:
+          event_id: "{{ event_id }}"
+          session_id: "{{ session_id }}"
+          connection: "{{ connection }}"
+          process: "{{ process }}"
+          infobase: "{{ infobase }}"
+          user_name: "{{ user_name }}"
+          host: "{{ host }}"
+          app_id: "{{ app_id }}"
+          locale: "{{ locale }}"
+          client_ip: "{{ client_ip }}"
+
+      - type: gauge
+        field: duration_current_service
+        tags:
+          event_id: "{{ event_id }}"
+          session_id: "{{ session_id }}"
+          connection: "{{ connection }}"
+          process: "{{ process }}"
+          infobase: "{{ infobase }}"
+          user_name: "{{ user_name }}"
+          host: "{{ host }}"
+          app_id: "{{ app_id }}"
+          locale: "{{ locale }}"
+          client_ip: "{{ client_ip }}"
+
+      - type: gauge
+        field: duration_last_5min_service
+        tags:
+          event_id: "{{ event_id }}"
+          session_id: "{{ session_id }}"
+          connection: "{{ connection }}"
+          process: "{{ process }}"
+          infobase: "{{ infobase }}"
+          user_name: "{{ user_name }}"
+          host: "{{ host }}"
+          app_id: "{{ app_id }}"
+          locale: "{{ locale }}"
+          client_ip: "{{ client_ip }}"
+
+      - type: gauge
+        field: duration_all_service
+        tags:
+          event_id: "{{ event_id }}"
+          session_id: "{{ session_id }}"
+          connection: "{{ connection }}"
+          process: "{{ process }}"
+          infobase: "{{ infobase }}"
+          user_name: "{{ user_name }}"
+          host: "{{ host }}"
+          app_id: "{{ app_id }}"
+          locale: "{{ locale }}"
+          client_ip: "{{ client_ip }}"
+
+      - type: gauge
+        field: memory_current
+        tags:
+          event_id: "{{ event_id }}"
+          session_id: "{{ session_id }}"
+          connection: "{{ connection }}"
+          process: "{{ process }}"
+          infobase: "{{ infobase }}"
+          user_name: "{{ user_name }}"
+          host: "{{ host }}"
+          app_id: "{{ app_id }}"
+          locale: "{{ locale }}"
+          client_ip: "{{ client_ip }}"
+
+      - type: gauge
+        field: memory_total
+        tags:
+          event_id: "{{ event_id }}"
+          session_id: "{{ session_id }}"
+          connection: "{{ connection }}"
+          process: "{{ process }}"
+          infobase: "{{ infobase }}"
+          user_name: "{{ user_name }}"
+          host: "{{ host }}"
+          app_id: "{{ app_id }}"
+          locale: "{{ locale }}"
+          client_ip: "{{ client_ip }}"
