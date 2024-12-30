@@ -11,19 +11,18 @@ VECTOR_SOURCE_TEMPLATE="
     mode: streaming
     streaming:
       respawn_on_exit: false
-    command: [\"${RAC}\", \"localhost:%{port2}\", %{param}, \"--cluster=%{cluster_id}\", \"--cluster-user=${USER}\", \"--cluster-pwd=${PASSWORD}\"]
+    command: [\"${RAC}\", \"localhost:%{port1}\", %{param}, \"--cluster=%{cluster_id}\", \"--cluster-user=${USER}\", \"--cluster-pwd=${PASSWORD}\"]
 "
 
 line_num=0
 join -j 1 \
-<(cat ps_ras.txt | awk '{for (i = 1; i <= NF; i++) {if ($i ~ /--port/) {split($(i), b, "=")}; if ($i ~ /--monitor-port=/) {split($i, a, "=")}}; print substr(b[2], 1, 2), a[2], b[2]}' | sort -k1,1) \
+<(cat ps_ras.txt | awk '{for (i = 1; i <= NF; i++) {if ($i ~ /--port/) {split($(i), b, "="); print substr(b[2], 1, 2), b[2]}}}' | sort -k1,1) \
 <(cat ps_rmngr.txt | awk '{for (i = 1; i <= NF; i++) {if ($i ~ /-clstid/) {clstid=$(i+1)}}; for (j = 1; j <= NF; j++) {if ($j ~ /-port/) { print substr($(j+1), 1, 2), clstid}}}' | sort -k1,1) \
 | while read -r line; do
 
 
     port1=$(echo "$line" | awk '{print $2}')
-    port2=$(echo "$line" | awk '{print $3}')
-    cluster_id=$(echo "$line" | awk '{print $4}')
+    cluster_id=$(echo "$line" | awk '{print $3}')
 
     for PARAM in "${PARAMS[@]}"; do
         rac_type=${PARAM//[ -,\"]/}
@@ -32,7 +31,6 @@ join -j 1 \
         output=${VECTOR_SOURCE_TEMPLATE}
         output=$(echo "$output" | sed "s/%{line_num}/$line_num/g")
         output=$(echo "$output" | sed "s/%{port1}/$port1/g")
-        output=$(echo "$output" | sed "s/%{port2}/$port2/g")
         output=$(echo "$output" | sed "s/%{cluster_id}/$cluster_id/g")
         output=$(echo "$output" | sed "s/%{param}/$PARAM/g")
         output=$(echo "$output" | sed "s/%{rac_type}/$rac_type/g")
