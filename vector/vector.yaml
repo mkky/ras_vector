@@ -59,7 +59,7 @@ transforms:
         condition:
           type: vrl
           source: |-
-            includes(array!(.command), "cluster") || 
+            includes(array!(.command), "process") || 
             includes(array!(.command), "/var/log/rac_process.log")
 
 sinks:
@@ -88,9 +88,7 @@ sources:
     type: exec
     framing:
       method: bytes
-    command:
-      - cat
-      - "/var/log/rac_sessions.log"
+    command: ["cat", "/var/log/rac_sessions.log"]
     mode: streaming
     streaming:
       respawn_on_exit: false
