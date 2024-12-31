@@ -47,7 +47,7 @@ transforms:
         condition:
           type: vrl
           source: |-
-            (includes(array!(.command), "session") && includes(array!(.command), "--license")) || 
+            (includes(array!(.command), "session") && includes(array!(.command), "--licenses")) || 
             includes(array!(.command), "/var/log/rac_sessions_licenses.log")
       - name: "session"
         condition:
