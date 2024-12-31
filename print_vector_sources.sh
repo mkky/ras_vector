@@ -1,5 +1,5 @@
 RAC="/opt/1cv8/x86_64/8.3.25.1445/rac"
-PARAMS=("\"session\", \"list\""  "\"process\", \"list\"" "\"session\" \"list\" \"--licenses\"")
+PARAMS=("\"session\", \"list\""  "\"process\", \"list\"" "\"session\", \"list\", \"--licenses\"")
 PASSWORD="1234"
 USER="Администратор"
 
