@@ -8,9 +8,9 @@ VECTOR_SOURCE_TEMPLATE="
     type: exec
     framing:
       method: bytes
-    mode: streaming
-    streaming:
-      respawn_on_exit: false
+    mode: scheduled
+    scheduled:
+      exec_interval_secs: 15
     command: [\"${RAC}\", \"localhost:%{port1}\", %{param}, \"--cluster=%{cluster_id}\", \"--cluster-user=${USER}\", \"--cluster-pwd=${PASSWORD}\"]
 "
 

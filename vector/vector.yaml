@@ -66,7 +66,6 @@ sinks:
   json_log_to_tmp_folder:
     type: file
     inputs:
-      - ff
       - parse_rac_output
     compression: none
     path: /var/lib/vector/vector-out.json
@@ -79,19 +78,14 @@ sinks:
       - metrics_*
 
 sources:
-  ff: # Eternal source to prevent Vector from exiting
-    type: file
-    include:
-      - ./8888888.log
-
   exec_rac_sessions_cat:
     type: exec
     framing:
       method: bytes
     command: ["cat", "/var/log/rac_sessions.log"]
-    mode: streaming
-    streaming:
-      respawn_on_exit: false
+    mode: scheduled
+    scheduled:
+      exec_interval_secs: 15
 
   exec_rac_sessions_licenses_cat:
     type: exec
@@ -100,9 +94,9 @@ sources:
     command:
       - cat
       - "/var/log/rac_sessions_licenses.log"
-    mode: streaming
-    streaming:
-      respawn_on_exit: false
+    mode: scheduled
+    scheduled:
+      exec_interval_secs: 15
 
   exec_rac_process_cat:
     type: exec
@@ -111,6 +105,6 @@ sources:
     command:
       - cat
       - "/var/log/rac_process.log"
-    mode: streaming
-    streaming:
-      respawn_on_exit: false
+    mode: scheduled
+    scheduled:
+      exec_interval_secs: 15
