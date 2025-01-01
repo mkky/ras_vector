@@ -16,6 +16,8 @@ transforms:
           license_type: "{{ license_type }}"
           net: "{{ net }}"
           rmngr_address: "{{ rmngr_address }}"
+          host_vector: "{{ host_vector }}"
+
 
       - type: gauge
         field: max_users_cur
@@ -29,6 +31,8 @@ transforms:
           license_type: "{{ license_type }}"
           net: "{{ net }}"
           rmngr_address: "{{ rmngr_address }}"
+          host_vector: "{{ host_vector }}"
+
 
       - type: gauge
         field: rmngr_port
@@ -42,6 +46,8 @@ transforms:
           license_type: "{{ license_type }}"
           net: "{{ net }}"
           rmngr_address: "{{ rmngr_address }}"
+          host_vector: "{{ host_vector }}"
+
 
       - type: gauge
         field: rmngr_pid
@@ -55,27 +61,5 @@ transforms:
           license_type: "{{ license_type }}"
           net: "{{ net }}"
           rmngr_address: "{{ rmngr_address }}"
+          host_vector: "{{ host_vector }}"
 
-#      - type: gauge
-#        field: license_type
-#        tags:
-#          session: "{{ session }}"
-#          user_name: "{{ user_name }}"
-#          host: "{{ host }}"
-#          app_id: "{{ app_id }}"
-#          series: "{{ series }}"
-#          issued_by_server: "{{ issued_by_server }}"
-#          net: "{{ net }}"
-#          rmngr_address: "{{ rmngr_address }}"
-#
-#      - type: gauge
-#        field: issued_by_server
-#        tags:
-#          session: "{{ session }}"
-#          user_name: "{{ user_name }}"
-#          host: "{{ host }}"
-#          app_id: "{{ app_id }}"
-#          series: "{{ series }}"
-#          license_type: "{{ license_type }}"
-#          net: "{{ net }}"
-#          rmngr_address: "{{ rmngr_address }}"

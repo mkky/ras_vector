@@ -1,5 +1,4 @@
 transforms:
-
   metrics_cluster:
     type: log_to_metric
     inputs:
@@ -16,6 +15,7 @@ transforms:
           started_at: "{{ started_at }}"
           use: "{{ use }}"
           reserve: "{{ reserve }}"
+          host_vector: "{{ host_vector }}"
 
       - type: gauge
         field: capacity
@@ -28,6 +28,7 @@ transforms:
           started_at: "{{ started_at }}"
           use: "{{ use }}"
           reserve: "{{ reserve }}"
+          host_vector: "{{ host_vector }}"
 
       - type: gauge
         field: memory_size
@@ -40,6 +41,7 @@ transforms:
           started_at: "{{ started_at }}"
           use: "{{ use }}"
           reserve: "{{ reserve }}"
+          host_vector: "{{ host_vector }}"
 
       - type: gauge
         field: memory_excess_time
@@ -52,6 +54,7 @@ transforms:
           started_at: "{{ started_at }}"
           use: "{{ use }}"
           reserve: "{{ reserve }}"
+          host_vector: "{{ host_vector }}"
 
       - type: gauge
         field: selection_size
@@ -64,6 +67,7 @@ transforms:
           started_at: "{{ started_at }}"
           use: "{{ use }}"
           reserve: "{{ reserve }}"
+          host_vector: "{{ host_vector }}"
 
       - type: gauge
         field: avg_call_time
@@ -76,6 +80,7 @@ transforms:
           started_at: "{{ started_at }}"
           use: "{{ use }}"
           reserve: "{{ reserve }}"
+          host_vector: "{{ host_vector }}"
 
       - type: gauge
         field: avg_db_call_time
@@ -88,6 +93,7 @@ transforms:
           started_at: "{{ started_at }}"
           use: "{{ use }}"
           reserve: "{{ reserve }}"
+          host_vector: "{{ host_vector }}"
 
       - type: gauge
         field: avg_lock_call_time
@@ -100,6 +106,7 @@ transforms:
           started_at: "{{ started_at }}"
           use: "{{ use }}"
           reserve: "{{ reserve }}"
+          host_vector: "{{ host_vector }}"
 
       - type: gauge
         field: avg_server_call_time
@@ -112,6 +119,7 @@ transforms:
           started_at: "{{ started_at }}"
           use: "{{ use }}"
           reserve: "{{ reserve }}"
+          host_vector: "{{ host_vector }}"
 
       - type: gauge
         field: avg_threads
@@ -124,6 +132,7 @@ transforms:
           started_at: "{{ started_at }}"
           use: "{{ use }}"
           reserve: "{{ reserve }}"
+          host_vector: "{{ host_vector }}"
 
       - type: gauge
         field: available_perfomance
@@ -136,39 +145,4 @@ transforms:
           started_at: "{{ started_at }}"
           use: "{{ use }}"
           reserve: "{{ reserve }}"
-
-#      - type: gauge
-#        field: is_enable
-#        tags:
-#          event_id: "{{ event_id }}"
-#          process: "{{ process }}"
-#          host: "{{ host }}"
-#          port: "{{ port }}"
-#          pid: "{{ pid }}"
-#          started_at: "{{ started_at }}"
-#          use: "{{ use }}"
-#          reserve: "{{ reserve }}"
-#
-#      - type: gauge
-#        field: running
-#        tags:
-#          event_id: "{{ event_id }}"
-#          process: "{{ process }}"
-#          host: "{{ host }}"
-#          port: "{{ port }}"
-#          pid: "{{ pid }}"
-#          started_at: "{{ started_at }}"
-#          use: "{{ use }}"
-#          reserve: "{{ reserve }}"
-#
-#      - type: gauge
-#        field: reserve
-#        tags:
-#          event_id: "{{ event_id }}"
-#          process: "{{ process }}"
-#          host: "{{ host }}"
-#          port: "{{ port }}"
-#          pid: "{{ pid }}"
-#          started_at: "{{ started_at }}"
-#          use: "{{ use }}"
-#          reserve: "{{ reserve }}"
+          host_vector: "{{ host_vector }}"
