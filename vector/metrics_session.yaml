@@ -6,6 +6,7 @@ transforms:
     metrics:
       - type: gauge
         field: session_id
+        name: session_session_id
         tags:
           event_id: "{{ event_id }}"
           session_id: "{{ session_id }}"
@@ -22,6 +23,7 @@ transforms:
 
       - type: gauge
         field: passive_session_hibernate_time
+        name: session_passive_session_hibernate_time
         tags:
           event_id: "{{ event_id }}"
           session_id: "{{ session_id }}"
@@ -38,6 +40,7 @@ transforms:
 
       - type: gauge
         field: hibernate_session_terminate_time
+        name: session_hibernate_session_terminate_time
         tags:
           event_id: "{{ event_id }}"
           session_id: "{{ session_id }}"
@@ -54,6 +57,7 @@ transforms:
 
       - type: gauge
         field: blocked_by_dbms
+        name: session_blocked_by_dbms
         tags:
           event_id: "{{ event_id }}"
           session_id: "{{ session_id }}"
@@ -70,6 +74,7 @@ transforms:
 
       - type: gauge
         field: blocked_by_ls
+        name: session_blocked_by_ls
         tags:
           event_id: "{{ event_id }}"
           session_id: "{{ session_id }}"
@@ -86,6 +91,7 @@ transforms:
 
       - type: gauge
         field: bytes_all
+        name: session_bytes_all
         tags:
           event_id: "{{ event_id }}"
           session_id: "{{ session_id }}"
@@ -102,6 +108,7 @@ transforms:
 
       - type: gauge
         field: bytes_last_5min
+        name: session_bytes_last_5min
         tags:
           event_id: "{{ event_id }}"
           session_id: "{{ session_id }}"
@@ -118,6 +125,7 @@ transforms:
 
       - type: gauge
         field: calls_all
+        name: session_calls_all
         tags:
           event_id: "{{ event_id }}"
           session_id: "{{ session_id }}"
@@ -134,6 +142,7 @@ transforms:
 
       - type: gauge
         field: calls_last_5min
+        name: session_calls_last_5min
         tags:
           event_id: "{{ event_id }}"
           session_id: "{{ session_id }}"
@@ -150,6 +159,7 @@ transforms:
 
       - type: gauge
         field: dbms_bytes_all
+        name: session_dbms_bytes_all
         tags:
           event_id: "{{ event_id }}"
           session_id: "{{ session_id }}"
@@ -166,6 +176,7 @@ transforms:
 
       - type: gauge
         field: dbms_bytes_last_5min
+        name: session_dbms_bytes_last_5min
         tags:
           event_id: "{{ event_id }}"
           session_id: "{{ session_id }}"
@@ -182,6 +193,7 @@ transforms:
 
       - type: gauge
         field: db_proc_took
+        name: session_db_proc_took
         tags:
           event_id: "{{ event_id }}"
           session_id: "{{ session_id }}"
@@ -198,6 +210,7 @@ transforms:
 
       - type: gauge
         field: duration_all
+        name: session_duration_all
         tags:
           event_id: "{{ event_id }}"
           session_id: "{{ session_id }}"
@@ -214,6 +227,7 @@ transforms:
 
       - type: gauge
         field: duration_all_dbms
+        name: session_duration_all_dbms
         tags:
           event_id: "{{ event_id }}"
           session_id: "{{ session_id }}"
@@ -230,6 +244,7 @@ transforms:
 
       - type: gauge
         field: duration_current
+        name: session_duration_current
         tags:
           event_id: "{{ event_id }}"
           session_id: "{{ session_id }}"
@@ -246,6 +261,7 @@ transforms:
 
       - type: gauge
         field: duration_current_dbms
+        name: session_duration_current_dbms
         tags:
           event_id: "{{ event_id }}"
           session_id: "{{ session_id }}"
@@ -262,6 +278,7 @@ transforms:
 
       - type: gauge
         field: duration_last_5min
+        name: session_duration_last_5min
         tags:
           event_id: "{{ event_id }}"
           session_id: "{{ session_id }}"
@@ -278,6 +295,7 @@ transforms:
 
       - type: gauge
         field: duration_last_5min_dbms
+        name: session_duration_last_5min_dbms
         tags:
           event_id: "{{ event_id }}"
           session_id: "{{ session_id }}"
@@ -294,6 +312,7 @@ transforms:
 
       - type: gauge
         field: duration_current_service
+        name: session_duration_current_service
         tags:
           event_id: "{{ event_id }}"
           session_id: "{{ session_id }}"
@@ -310,6 +329,7 @@ transforms:
 
       - type: gauge
         field: duration_last_5min_service
+        name: session_duration_last_5min_service
         tags:
           event_id: "{{ event_id }}"
           session_id: "{{ session_id }}"
@@ -326,6 +346,7 @@ transforms:
 
       - type: gauge
         field: duration_all_service
+        name: session_duration_all_service
         tags:
           event_id: "{{ event_id }}"
           session_id: "{{ session_id }}"
@@ -342,6 +363,7 @@ transforms:
 
       - type: gauge
         field: memory_current
+        name: session_memory_current
         tags:
           event_id: "{{ event_id }}"
           session_id: "{{ session_id }}"
@@ -358,6 +380,7 @@ transforms:
 
       - type: gauge
         field: memory_total
+        name: session_memory_total
         tags:
           event_id: "{{ event_id }}"
           session_id: "{{ session_id }}"

@@ -6,6 +6,7 @@ transforms:
     metrics:
       - type: gauge
         field: max_users_all
+        name: session_license_max_users_all
         tags:
           session: "{{ session }}"
           user_name: "{{ user_name }}"
@@ -21,6 +22,7 @@ transforms:
 
       - type: gauge
         field: max_users_cur
+        name: session_license_max_users_cur
         tags:
           session: "{{ session }}"
           user_name: "{{ user_name }}"
@@ -36,6 +38,7 @@ transforms:
 
       - type: gauge
         field: rmngr_port
+        name: session_license_rmngr_port
         tags:
           session: "{{ session }}"
           user_name: "{{ user_name }}"
@@ -51,6 +54,7 @@ transforms:
 
       - type: gauge
         field: rmngr_pid
+        name: session_license_rmngr_pid
         tags:
           session: "{{ session }}"
           user_name: "{{ user_name }}"

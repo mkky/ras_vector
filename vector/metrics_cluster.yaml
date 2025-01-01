@@ -6,6 +6,7 @@ transforms:
     metrics:
       - type: gauge
         field: connections
+        name: process_connections
         tags:
           event_id: "{{ event_id }}"
           process: "{{ process }}"
@@ -19,6 +20,7 @@ transforms:
 
       - type: gauge
         field: capacity
+        name: process_capacity
         tags:
           event_id: "{{ event_id }}"
           process: "{{ process }}"
@@ -32,6 +34,7 @@ transforms:
 
       - type: gauge
         field: memory_size
+        name: process_memory_size
         tags:
           event_id: "{{ event_id }}"
           process: "{{ process }}"
@@ -45,6 +48,7 @@ transforms:
 
       - type: gauge
         field: memory_excess_time
+        name: process_memory_excess_time
         tags:
           event_id: "{{ event_id }}"
           process: "{{ process }}"
@@ -58,6 +62,7 @@ transforms:
 
       - type: gauge
         field: selection_size
+        name: process_selection_size
         tags:
           event_id: "{{ event_id }}"
           process: "{{ process }}"
@@ -71,6 +76,7 @@ transforms:
 
       - type: gauge
         field: avg_call_time
+        name: process_avg_call_time
         tags:
           event_id: "{{ event_id }}"
           process: "{{ process }}"
@@ -84,6 +90,7 @@ transforms:
 
       - type: gauge
         field: avg_db_call_time
+        name: process_avg_db_call_time
         tags:
           event_id: "{{ event_id }}"
           process: "{{ process }}"
@@ -97,6 +104,7 @@ transforms:
 
       - type: gauge
         field: avg_lock_call_time
+        name: process_avg_lock_call_time
         tags:
           event_id: "{{ event_id }}"
           process: "{{ process }}"
@@ -110,6 +118,7 @@ transforms:
 
       - type: gauge
         field: avg_server_call_time
+        name: process_avg_server_call_time
         tags:
           event_id: "{{ event_id }}"
           process: "{{ process }}"
@@ -123,6 +132,7 @@ transforms:
 
       - type: gauge
         field: avg_threads
+        name: process_avg_threads
         tags:
           event_id: "{{ event_id }}"
           process: "{{ process }}"
@@ -136,6 +146,7 @@ transforms:
 
       - type: gauge
         field: available_perfomance
+        name: process_available_perfomance
         tags:
           event_id: "{{ event_id }}"
           process: "{{ process }}"
