@@ -22,7 +22,7 @@ transforms:
           event.cmd_type = get!(value: .command, path: [1])
           event.command_str = join!(.command, " ")
           event.command = .command
-          event.host_vector = get_hostname!()
+          event.host_vector = split(get_hostname!(), ".")[0]
 
           event.event_id = if exists(event.session) {
             event.session
